@@ -185,6 +185,20 @@ const sharedMobileQuickBar = `
   </div>
 `;
 
+const sharedDesktopPhoneFloat = `
+  <a class="desktop-phone-float" href="tel:+4530130058" aria-label="Ring til MH AutoTeknik p&aring; 30 13 00 58">
+    <span class="desktop-phone-float-copy">
+      <span class="desktop-phone-float-label">Ring hurtigt</span>
+      <strong>30 13 00 58</strong>
+    </span>
+    <span class="desktop-phone-float-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" focusable="false">
+        <path d="M6.6 4.5h3.2l1.2 4-1.8 1.8a15 15 0 0 0 4.6 4.6l1.8-1.8 4 1.2v3.2c0 .7-.6 1.3-1.3 1.3C10.3 18.8 5.2 13.7 5.2 5.8c0-.7.6-1.3 1.4-1.3Z" fill="currentColor"/>
+      </svg>
+    </span>
+  </a>
+`;
+
 const heroSlides = [
   {
     src: resolveAssetHref("images/ejer-bil.jpg"),
@@ -293,6 +307,10 @@ function injectSharedLayout() {
 
   if (!document.querySelector(".mobile-quickbar")) {
     document.body.insertAdjacentHTML("beforeend", sharedMobileQuickBar);
+  }
+
+  if (!document.querySelector(".desktop-phone-float")) {
+    document.body.insertAdjacentHTML("afterbegin", sharedDesktopPhoneFloat);
   }
 }
 
