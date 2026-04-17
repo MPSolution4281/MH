@@ -9,6 +9,37 @@ function resolveAssetHref(path) {
   return `${pagePrefix}/${path}`;
 }
 
+const socialPlatforms = [
+  {
+    name: "Facebook",
+    href: "",
+    icon:
+      '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.5 21v-7h2.3l.4-3h-2.7V9.1c0-.9.3-1.6 1.6-1.6H16V4.8c-.3 0-1.2-.1-2.2-.1-2.2 0-3.8 1.3-3.8 4V11H7.5v3H10V21h3.5Z" fill="currentColor"/></svg>'
+  },
+  {
+    name: "LinkedIn",
+    href: "",
+    icon:
+      '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.8 8.3a2 2 0 1 1 0-4 2 2 0 0 1 0 4Zm1.7 2.1H5.1V21h3.4V10.4Zm5.4 0h-3.4V21H14v-5.5c0-1.5.3-2.9 2.1-2.9 1.8 0 1.8 1.7 1.8 3V21h3.4v-6.1c0-3-1.3-5.2-4.5-5.2-1.5 0-2.6.8-3 1.6h-.1v-1Z" fill="currentColor"/></svg>'
+  },
+  {
+    name: "Instagram",
+    href: "",
+    icon:
+      '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2Zm0 8A3.2 3.2 0 1 1 12 8.8a3.2 3.2 0 0 1 0 6.4Zm6.1-8.2a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z" fill="currentColor"/><path d="M12 3.8c2.7 0 3 .1 4.1.1 1 0 1.6.2 2 .4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.5.4 1 .4 2 .1 1.1.1 1.4.1 4.1s0 3-.1 4.1c0 1-.2 1.6-.4 2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.5.2-1 .4-2 .4-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-1 0-1.6-.2-2-.4a4 4 0 0 1-1.4-.9 4 4 0 0 1-.9-1.4c-.2-.5-.4-1-.4-2C3.9 15 3.8 14.7 3.8 12s.1-3 .1-4.1c0-1 .2-1.6.4-2 .2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.5-.2 1-.4 2-.4 1.1-.1 1.4-.1 4.1-.1Zm0-1.8c-2.7 0-3 0-4.2.1-1.2 0-2 .2-2.7.5A5.7 5.7 0 0 0 3 4a5.7 5.7 0 0 0-1.4 2.1C1.3 6.8 1.1 7.6 1 8.8.9 10 .9 10.3.9 13s0 3 .1 4.2c0 1.2.2 2 .5 2.7A5.7 5.7 0 0 0 3 22a5.7 5.7 0 0 0 2.1 1.4c.7.3 1.5.5 2.7.5 1.2.1 1.5.1 4.2.1s3 0 4.2-.1c1.2 0 2-.2 2.7-.5A5.7 5.7 0 0 0 21 22a5.7 5.7 0 0 0 1.4-2.1c.3-.7.5-1.5.5-2.7.1-1.2.1-1.5.1-4.2s0-3-.1-4.2c0-1.2-.2-2-.5-2.7A5.7 5.7 0 0 0 21 4a5.7 5.7 0 0 0-2.1-1.4c-.7-.3-1.5-.5-2.7-.5C15 2 14.7 2 12 2Z" fill="currentColor"/></svg>'
+  }
+];
+
+function renderSocialLinks() {
+  return socialPlatforms
+    .map(({ name, href, icon }) =>
+      href
+        ? `<a class="social-link" href="${href}" target="_blank" rel="noreferrer" aria-label="${name}">${icon}<span>${name}</span></a>`
+        : `<span class="social-link is-disabled" aria-label="${name} kommer snart">${icon}<span>${name}</span></span>`
+    )
+    .join("");
+}
+
 const sharedHeader = `
   <header class="site-header">
     <div class="container header-inner">
@@ -82,6 +113,13 @@ const sharedFooter = `
         <p>Ring p&aring; <a href="tel:+4530130058">30 13 00 58</a> eller brug formularen for en konkret vurdering.</p>
         <p>Omr&aring;de: 3540 Lynge</p>
         <a href="${resolvePageHref("kontakt.html")}">G&aring; til kontakt</a>
+      </div>
+      <div>
+        <h3>Socials</h3>
+        <p>Profilerne er p&aring; vej. Ikonerne er klar, s&aring; linksene kan aktiveres senere.</p>
+        <div class="social-links" aria-label="Sociale medier">
+          ${renderSocialLinks()}
+        </div>
       </div>
     </div>
   </footer>
