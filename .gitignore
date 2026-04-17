@@ -1,0 +1,8 @@
+.next
+node_modules
+out
+dist
+coverage
+.vercel
+.DS_Store
+Thumbs.db
