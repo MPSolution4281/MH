@@ -40,6 +40,38 @@ function renderSocialLinks() {
     .join("");
 }
 
+function renderQuickBarLinks() {
+  return [
+    {
+      label: "Forside",
+      href: resolvePageHref("index.html"),
+      icon:
+        '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 10.8 12 4l8 6.8V20h-5.2v-5.7H9.2V20H4v-9.2Z" fill="currentColor"/></svg>'
+    },
+    {
+      label: "Kontakt",
+      href: "mailto:",
+      icon:
+        '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6.5h18v11H3v-11Zm2.2 1.5 6.8 5.1L18.8 8H5.2Zm14.3 8V9.2l-7 5.2-7-5.2V16h14Z" fill="currentColor"/></svg>'
+    },
+    {
+      label: "30 13 00 58",
+      href: "tel:+4530130058",
+      icon:
+        '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 4.5h3.2l1.2 4-1.8 1.8a15 15 0 0 0 4.6 4.6l1.8-1.8 4 1.2v3.2c0 .7-.6 1.3-1.3 1.3C10.3 18.8 5.2 13.7 5.2 5.8c0-.7.6-1.3 1.4-1.3Z" fill="currentColor"/></svg>'
+    }
+  ]
+    .map(
+      ({ label, href, icon }) => `
+        <a class="mobile-quickbar-link" href="${href}">
+          <span class="mobile-quickbar-icon">${icon}</span>
+          <span class="mobile-quickbar-label">${label}</span>
+        </a>
+      `
+    )
+    .join("");
+}
+
 const sharedHeader = `
   <header class="site-header">
     <div class="container header-inner">
@@ -123,6 +155,34 @@ const sharedFooter = `
       </div>
     </div>
   </footer>
+`;
+
+const sharedMobileQuickBar = `
+  <div class="mobile-quickbar" aria-label="Hurtig navigation">
+    <div class="mobile-quickbar-sheet" id="mobileQuickbarSheet" hidden>
+      <div class="mobile-quickbar-sheet-head">
+        <span>Menu</span>
+        <button class="mobile-quickbar-close" type="button" aria-label="Luk menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6.4 5 5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6L6.4 19 5 17.6 10.6 12 5 6.4 6.4 5Z" fill="currentColor"/></svg>
+        </button>
+      </div>
+      <nav class="mobile-quickbar-menu" aria-label="Mobilmenu"></nav>
+    </div>
+    <div class="mobile-quickbar-bar">
+      ${renderQuickBarLinks()}
+      <button
+        class="mobile-quickbar-link mobile-quickbar-menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobileQuickbarSheet"
+      >
+        <span class="mobile-quickbar-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16v2H4V7Zm0 5h16v2H4v-2Zm0 5h16v2H4v-2Z" fill="currentColor"/></svg>
+        </span>
+        <span class="mobile-quickbar-label">Menu</span>
+      </button>
+    </div>
+  </div>
 `;
 
 const heroSlides = [
@@ -230,6 +290,10 @@ function injectSharedLayout() {
   document.querySelectorAll('[data-include="footer"]').forEach((node) => {
     node.outerHTML = sharedFooter;
   });
+
+  if (!document.querySelector(".mobile-quickbar")) {
+    document.body.insertAdjacentHTML("beforeend", sharedMobileQuickBar);
+  }
 }
 
 function initNav() {
@@ -264,6 +328,77 @@ function initNav() {
       nav.classList.remove("is-open");
       toggle.setAttribute("aria-expanded", "false");
     });
+  });
+}
+
+function initMobileQuickBar() {
+  const quickBar = document.querySelector(".mobile-quickbar");
+  const sheet = document.querySelector("#mobileQuickbarSheet");
+  const sheetNav = document.querySelector(".mobile-quickbar-menu");
+  const menuToggle = document.querySelector(".mobile-quickbar-menu-toggle");
+  const closeButton = document.querySelector(".mobile-quickbar-close");
+  const siteNav = document.querySelector(".site-nav");
+  if (!quickBar || !sheet || !sheetNav || !menuToggle || !closeButton || !siteNav) return;
+
+  if (!sheetNav.children.length) {
+    sheetNav.innerHTML = siteNav.innerHTML;
+  }
+
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+  const scrollThreshold = 14;
+
+  const setOpen = (isOpen) => {
+    sheet.hidden = !isOpen;
+    quickBar.classList.toggle("is-open", isOpen);
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    document.body.classList.toggle("mobile-quickbar-open", isOpen);
+  };
+
+  menuToggle.addEventListener("click", () => {
+    setOpen(sheet.hidden);
+  });
+
+  closeButton.addEventListener("click", () => {
+    setOpen(false);
+  });
+
+  sheetNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      setOpen(false);
+    });
+  });
+
+  const syncQuickBarVisibility = () => {
+    const currentScrollY = window.scrollY;
+    const delta = currentScrollY - lastScrollY;
+    const nearTop = currentScrollY < 24;
+
+    if (nearTop || delta < -scrollThreshold) {
+      quickBar.classList.remove("is-hidden");
+    } else if (delta > scrollThreshold && !quickBar.classList.contains("is-open")) {
+      quickBar.classList.add("is-hidden");
+    }
+
+    lastScrollY = currentScrollY;
+    ticking = false;
+  };
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        window.requestAnimationFrame(syncQuickBarVisibility);
+        ticking = true;
+      }
+    },
+    { passive: true }
+  );
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 820) {
+      setOpen(false);
+    }
   });
 }
 
@@ -590,6 +725,7 @@ function initCarFinders() {
 document.addEventListener("DOMContentLoaded", () => {
   injectSharedLayout();
   initNav();
+  initMobileQuickBar();
   initHeroSlider();
   initBlogSpotlight();
   initCarFinders();
