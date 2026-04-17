@@ -16,7 +16,7 @@ export default function Header() {
           <span className="brand-logo">
             {/* Udskift logo-filen her, når den endelige version er tilgængelig */}
             <img
-              src="/images/logo-mh-autoteknik.png"
+              src="/images/logo-mh-autoteknik.jpg"
               alt="MH AutoTeknik og Optimering logo"
               onError={(event) => {
                 event.currentTarget.style.display = "none";

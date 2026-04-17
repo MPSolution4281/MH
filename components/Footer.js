@@ -15,23 +15,22 @@ export default function Footer() {
             </span>
           </Link>
           <p>
-            Premium motoroptimering, chiptuning og værkstedsservice med fokus på kvalitet,
-            performance og en troværdig dansk kundeoplevelse.
+            Service, fejlsøgning, værkstedsarbejde og motoroptimering med fokus på kvalitet,
+            driftssikkerhed og en troværdig dansk kundeoplevelse.
           </p>
         </div>
 
         <div>
           <h3>Hurtige links</h3>
-          <Link href="/chiptuning">Chiptuning</Link>
           <Link href="/services">Services</Link>
           <Link href="/find-din-bil">Find din bil</Link>
+          <Link href="/chiptuning">Chiptuning</Link>
           <Link href="/blog">Blog</Link>
           <Link href="/kontakt">Kontakt</Link>
         </div>
 
         <div>
           <h3>Kontakt</h3>
-          {/* Udskift kontaktdata her */}
           <a href="tel:+4500000000">+45 00 00 00 00</a>
           <a href="mailto:kontakt@mhautoteknik.dk">kontakt@mhautoteknik.dk</a>
           <p>Industrivej 00, 0000 By</p>

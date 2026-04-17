@@ -35,9 +35,9 @@ const sharedHeader = `
 
       <nav class="site-nav" aria-label="Hovednavigation">
         <a href="${resolvePageHref("index.html")}">Forside</a>
-        <a href="${resolvePageHref("chiptuning.html")}">Chiptuning</a>
         <a href="${resolvePageHref("services.html")}">Services</a>
         <a href="${resolvePageHref("find-din-bil.html")}">Find din bil</a>
+        <a href="${resolvePageHref("chiptuning.html")}">Chiptuning</a>
         <a href="${resolvePageHref("blog/index.html")}">Blog</a>
         <a href="${resolvePageHref("om-os.html")}">Om os</a>
         <a href="${resolvePageHref("kontakt.html")}">Kontakt</a>
@@ -65,15 +65,15 @@ const sharedFooter = `
           </span>
         </a>
         <p class="footer-brand-copy">
-          Premium motoroptimering, chiptuning og v&aelig;rkstedsservice med fokus p&aring; kvalitet,
-          performance og en trov&aelig;rdig dansk kundeoplevelse.
+          Service, fejls&oslash;gning, v&aelig;rkstedsarbejde og motoroptimering med fokus p&aring; kvalitet,
+          driftssikkerhed og en trov&aelig;rdig dansk kundeoplevelse.
         </p>
       </div>
       <div>
         <h3>Hurtige links</h3>
-        <a href="${resolvePageHref("chiptuning.html")}">Chiptuning</a>
         <a href="${resolvePageHref("services.html")}">Services</a>
         <a href="${resolvePageHref("find-din-bil.html")}">Find din bil</a>
+        <a href="${resolvePageHref("chiptuning.html")}">Chiptuning</a>
         <a href="${resolvePageHref("blog/index.html")}">Blog</a>
         <a href="${resolvePageHref("kontakt.html")}">Kontakt</a>
       </div>
@@ -199,22 +199,27 @@ function initNav() {
   const nav = document.querySelector(".site-nav");
   if (!toggle || !nav) return;
 
+  const pageTargets = {
+    home: "index.html",
+    services: "services.html",
+    "find-bil": "find-din-bil.html",
+    chiptuning: "chiptuning.html",
+    blog: "blog/index.html",
+    "om-os": "om-os.html",
+    kontakt: "kontakt.html"
+  };
+
   toggle.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("is-open");
     toggle.setAttribute("aria-expanded", String(isOpen));
   });
 
   const page = document.body.dataset.page;
+  const expectedTarget = pageTargets[page];
   nav.querySelectorAll("a").forEach((link) => {
     const href = link.getAttribute("href");
-    const active =
-      (page === "home" && href.endsWith("/index.html")) ||
-      (page === "blog" && href.endsWith("/blog/index.html")) ||
-      (page === "chiptuning" && href.endsWith("/chiptuning.html")) ||
-      (page === "services" && href.endsWith("/services.html")) ||
-      (page === "find-bil" && href.endsWith("/find-din-bil.html")) ||
-      (page === "om-os" && href.endsWith("/om-os.html")) ||
-      (page === "kontakt" && href.endsWith("/kontakt.html"));
+    const normalizedHref = href.replace(/^\.\//, "").replace(/^\.\.\//, "");
+    const active = Boolean(expectedTarget && normalizedHref === expectedTarget);
 
     if (active) link.classList.add("is-active");
     link.addEventListener("click", () => {

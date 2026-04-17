@@ -5,9 +5,9 @@ export const siteConfig = {
 
 export const navigation = [
   { label: "Forside", href: "/" },
-  { label: "Chiptuning", href: "/chiptuning" },
   { label: "Services", href: "/services" },
   { label: "Find din bil", href: "/find-din-bil" },
+  { label: "Chiptuning", href: "/chiptuning" },
   { label: "Blog", href: "/blog" },
   { label: "Om os", href: "/om-os" },
   { label: "Kontakt", href: "/kontakt" }
