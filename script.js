@@ -1,10 +1,21 @@
-﻿const sharedHeader = `
+const isBlogPage = window.location.pathname.includes("/blog/");
+const pagePrefix = isBlogPage ? ".." : ".";
+
+function resolvePageHref(path) {
+  return `${pagePrefix}/${path}`;
+}
+
+function resolveAssetHref(path) {
+  return `${pagePrefix}/${path}`;
+}
+
+const sharedHeader = `
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="/index.html">
+      <a class="brand" href="${resolvePageHref("index.html")}">
         <span class="brand-logo">
           <img
-            src="/images/logo-mh-autoteknik.jpg"
+            src="${resolveAssetHref("images/logo-mh-autoteknik.jpg")}"
             alt="MH AutoTeknik og Optimering logo"
             onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback');"
           />
@@ -23,13 +34,13 @@
       </button>
 
       <nav class="site-nav" aria-label="Hovednavigation">
-        <a href="/index.html">Forside</a>
-        <a href="/chiptuning.html">Chiptuning</a>
-        <a href="/services.html">Services</a>
-        <a href="/find-din-bil.html">Find din bil</a>
-        <a href="/blog/index.html">Blog</a>
-        <a href="/om-os.html">Om os</a>
-        <a href="/kontakt.html">Kontakt</a>
+        <a href="${resolvePageHref("index.html")}">Forside</a>
+        <a href="${resolvePageHref("chiptuning.html")}">Chiptuning</a>
+        <a href="${resolvePageHref("services.html")}">Services</a>
+        <a href="${resolvePageHref("find-din-bil.html")}">Find din bil</a>
+        <a href="${resolvePageHref("blog/index.html")}">Blog</a>
+        <a href="${resolvePageHref("om-os.html")}">Om os</a>
+        <a href="${resolvePageHref("kontakt.html")}">Kontakt</a>
       </nav>
     </div>
   </header>
@@ -39,10 +50,10 @@ const sharedFooter = `
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <a class="brand footer-brand" href="/index.html">
+        <a class="brand footer-brand" href="${resolvePageHref("index.html")}">
           <span class="brand-logo">
             <img
-              src="/images/logo-mh-autoteknik.jpg"
+              src="${resolveAssetHref("images/logo-mh-autoteknik.jpg")}"
               alt="MH AutoTeknik og Optimering logo"
               onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback');"
             />
@@ -60,17 +71,17 @@ const sharedFooter = `
       </div>
       <div>
         <h3>Hurtige links</h3>
-        <a href="/chiptuning.html">Chiptuning</a>
-        <a href="/services.html">Services</a>
-        <a href="/find-din-bil.html">Find din bil</a>
-        <a href="/blog/index.html">Blog</a>
-        <a href="/kontakt.html">Kontakt</a>
+        <a href="${resolvePageHref("chiptuning.html")}">Chiptuning</a>
+        <a href="${resolvePageHref("services.html")}">Services</a>
+        <a href="${resolvePageHref("find-din-bil.html")}">Find din bil</a>
+        <a href="${resolvePageHref("blog/index.html")}">Blog</a>
+        <a href="${resolvePageHref("kontakt.html")}">Kontakt</a>
       </div>
       <div>
         <h3>Kontakt</h3>
         <p>Ring p&aring; <a href="tel:+4530130058">30 13 00 58</a> eller brug formularen for en konkret vurdering.</p>
         <p>Omr&aring;de: 3540 Lynge</p>
-        <a href="/kontakt.html">G&aring; til kontakt</a>
+        <a href="${resolvePageHref("kontakt.html")}">G&aring; til kontakt</a>
       </div>
     </div>
   </footer>
@@ -78,11 +89,11 @@ const sharedFooter = `
 
 const heroSlides = [
   {
-    src: "/images/ejer-bil.jpg",
+    src: resolveAssetHref("images/ejer-bil.jpg"),
     alt: "Hvid performancebil fotograferet udendørs"
   },
   {
-    src: "/images/vaerktoejstavle.jpg",
+    src: resolveAssetHref("images/vaerktoejstavle.jpg"),
     alt: "Ryddelig værktøjsvæg og arbejdsstation på værksted"
   },
   {
@@ -99,7 +110,7 @@ const blogSpotlightPosts = [
       "Læs hvordan softwareoptimering kan give bedre respons, mere moment og et mere harmonisk effektforløb i hverdagen.",
     cardCopy:
       "Et rådgivende indblik i, hvordan en sund bil kan få bedre respons og mere overskud uden at miste fokus på driftssikkerhed.",
-    href: "/blog/motoroptimering.html"
+    href: resolvePageHref("blog/motoroptimering.html")
   },
   {
     category: "Chiptuning",
@@ -108,7 +119,7 @@ const blogSpotlightPosts = [
       "Få overblik over ECU tuning, flere hestekræfter og forskellen på stage 1 og stage 2.",
     cardCopy:
       "Et stærkt startpunkt for bilejere, der vil forstå forskellen på stage 1, stage 2 og realistiske forventninger.",
-    href: "/blog/hvad-er-chiptuning.html"
+    href: resolvePageHref("blog/hvad-er-chiptuning.html")
   },
   {
     category: "Diagnostik",
@@ -117,7 +128,7 @@ const blogSpotlightPosts = [
       "Se hvorfor korrekt fejlsøgning er vigtigere end at gætte, når bilen har motorlampe eller tab af effekt.",
     cardCopy:
       "Et praktisk indlæg om hvorfor systematisk fejlsøgning næsten altid er bedre end at skifte dele på må og få.",
-    href: "/blog/diagnostik-og-fejlsoegning.html"
+    href: resolvePageHref("blog/diagnostik-og-fejlsoegning.html")
   },
   {
     category: "Vedligehold",
@@ -126,7 +137,7 @@ const blogSpotlightPosts = [
       "Lær hvorfor servicehistorik, olie, filtre og generel teknisk stand betyder mere for resultatet end mange bilejere tror.",
     cardCopy:
       "Et roligt overblik over, hvorfor korrekt vedligeholdelse er et vigtigere fundament end mange forventer.",
-    href: "/blog/service-og-vedligehold.html"
+    href: resolvePageHref("blog/service-og-vedligehold.html")
   },
   {
     category: "Klargøring",
@@ -135,7 +146,7 @@ const blogSpotlightPosts = [
       "Se hvad der bør kontrolleres, før en bil får ECU tuning, og hvorfor en sund bil altid er det bedste udgangspunkt.",
     cardCopy:
       "Et nyttigt indlæg for bilejere, der vil undgå at optimere oven på skjulte fejl eller et usikkert setup.",
-    href: "/blog/klargoering-foer-optimering.html"
+    href: resolvePageHref("blog/klargoering-foer-optimering.html")
   },
   {
     category: "Setup",
@@ -144,7 +155,7 @@ const blogSpotlightPosts = [
       "Få et bedre beslutningsgrundlag, hvis du overvejer stage 1, stage 2 eller hardwareændringer og vil undgå fejlinvesteringer.",
     cardCopy:
       "Et gennemtænkt blik på, hvordan man bygger bilen op i trin og vælger de rigtige næste skridt.",
-    href: "/blog/raadgivning-om-setup.html"
+    href: resolvePageHref("blog/raadgivning-om-setup.html")
   }
 ];
 
@@ -197,13 +208,13 @@ function initNav() {
   nav.querySelectorAll("a").forEach((link) => {
     const href = link.getAttribute("href");
     const active =
-      (page === "home" && href === "/index.html") ||
-      (page === "blog" && href === "/blog/index.html") ||
-      (page === "chiptuning" && href === "/chiptuning.html") ||
-      (page === "services" && href === "/services.html") ||
-      (page === "find-bil" && href === "/find-din-bil.html") ||
-      (page === "om-os" && href === "/om-os.html") ||
-      (page === "kontakt" && href === "/kontakt.html");
+      (page === "home" && href.endsWith("/index.html")) ||
+      (page === "blog" && href.endsWith("/blog/index.html")) ||
+      (page === "chiptuning" && href.endsWith("/chiptuning.html")) ||
+      (page === "services" && href.endsWith("/services.html")) ||
+      (page === "find-bil" && href.endsWith("/find-din-bil.html")) ||
+      (page === "om-os" && href.endsWith("/om-os.html")) ||
+      (page === "kontakt" && href.endsWith("/kontakt.html"));
 
     if (active) link.classList.add("is-active");
     link.addEventListener("click", () => {
@@ -541,7 +552,3 @@ document.addEventListener("DOMContentLoaded", () => {
   initCarFinders();
   initRevealAnimations();
 });
-
-
-
-
