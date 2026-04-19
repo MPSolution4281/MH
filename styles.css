@@ -226,6 +226,7 @@ textarea {
 
 .hero-slider-shell {
   overflow: hidden;
+  pointer-events: none;
 }
 
 .hero-slide {
@@ -245,6 +246,7 @@ textarea {
 
 .hero-overlay {
   background: rgba(0, 0, 0, 0.56);
+  pointer-events: none;
 }
 
 .hero-content {
@@ -269,6 +271,7 @@ textarea {
   margin-top: 22px;
 }
 
+.hero-highlights a,
 .hero-highlights span {
   display: inline-flex;
   align-items: center;
@@ -280,6 +283,22 @@ textarea {
   color: #dddddd;
   backdrop-filter: blur(10px);
   font-size: 0.84rem;
+  text-decoration: none;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease,
+    transform 180ms ease;
+}
+
+.hero-highlights a:hover,
+.hero-highlights a:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.hero-highlights a:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.35);
+  outline-offset: 2px;
 }
 
 .mini-kicker {
@@ -349,6 +368,7 @@ textarea {
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.04),
     inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+  scroll-margin-top: 110px;
 }
 
 .section-contrast::before,
@@ -415,6 +435,7 @@ textarea {
   margin-top: 24px;
 }
 
+.page-hero-strip a,
 .page-hero-strip span {
   display: inline-flex;
   align-items: center;
@@ -425,6 +446,22 @@ textarea {
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: #dddddd;
   font-size: 0.88rem;
+  text-decoration: none;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease,
+    transform 180ms ease;
+}
+
+.page-hero-strip a:hover,
+.page-hero-strip a:focus-visible {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.24);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.page-hero-strip a:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.25);
+  outline-offset: 2px;
 }
 
 .eyebrow {
