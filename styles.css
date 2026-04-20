@@ -1260,6 +1260,11 @@ select:disabled {
   background: linear-gradient(90deg, var(--accent), transparent);
 }
 
+.owner-card h2 {
+  line-height: 1.08;
+  margin-bottom: 14px;
+}
+
 .owner-signature {
   display: grid;
   gap: 4px;
