@@ -179,6 +179,9 @@ const sharedFooter = `
         </div>
       </section>
     </div>
+    <div class="container footer-bottom">
+      <p>MH AutoTeknik og Optimering · Hobrovej 51, 2610 Rødovre</p>
+    </div>
   </footer>
 `;
 
