@@ -167,10 +167,81 @@ textarea {
   gap: 24px;
 }
 
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 12px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #0b0b0b;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.header-cta:hover,
+.header-cta:focus-visible {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.nav-item-services {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
 .site-nav a {
   color: var(--muted);
   font-size: 0.95rem;
   transition: color 180ms ease;
+}
+
+.services-subnav {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  min-width: 260px;
+  display: grid;
+  gap: 2px;
+  padding: 10px;
+  border-radius: 14px;
+  border: 1px solid var(--line-strong);
+  background: rgba(12, 12, 12, 0.98);
+  box-shadow: 0 20px 38px rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    visibility 180ms ease;
+  z-index: 150;
+}
+
+.services-subnav a {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.services-subnav a:hover,
+.services-subnav a:focus-visible {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.nav-item-services:hover .services-subnav,
+.nav-item-services:focus-within .services-subnav {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .site-nav a:hover,
@@ -182,6 +253,27 @@ textarea {
 .site-nav a.is-active {
   position: relative;
 }
+
+.seo-fallback-header,
+.seo-fallback-footer {
+  background: #111;
+  border-bottom: 1px solid var(--line);
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+.seo-fallback-footer {
+  border-top: 1px solid var(--line);
+  border-bottom: 0;
+  margin-top: 16px;
+}
+
+.seo-fallback-header nav {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 
 .site-nav a.is-active::after {
   content: "";
@@ -1085,8 +1177,21 @@ select:disabled {
 }
 
 .footer-grid {
-  grid-template-columns: 1.1fr 0.7fr 0.8fr;
-  gap: 24px;
+  grid-template-columns: 1.15fr 0.9fr 1.05fr 1fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.005)),
+    rgba(12, 12, 12, 0.72);
 }
 
 .footer-brand .brand-logo {
@@ -1096,6 +1201,29 @@ select:disabled {
 
 .footer-brand-copy {
   max-width: 30rem;
+  margin: 4px 0 0;
+  line-height: 1.6;
+}
+
+.footer-links {
+  display: grid;
+  gap: 8px;
+}
+
+.footer-links a,
+.footer-col p a,
+.footer-contact-link {
+  color: var(--text);
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible,
+.footer-contact-link:hover,
+.footer-contact-link:focus-visible {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--accent);
 }
 
 .social-links {
@@ -1103,6 +1231,35 @@ select:disabled {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 16px;
+}
+
+.footer-map-wrap {
+  margin: 6px 0 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0f0f0f;
+}
+
+.footer-map-wrap iframe {
+  width: 100%;
+  height: 170px;
+  border: 0;
+  display: block;
+}
+
+.footer-map-link {
+  margin-top: 2px;
+  color: var(--muted);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.2);
+  text-underline-offset: 4px;
+}
+
+.footer-map-link:hover,
+.footer-map-link:focus-visible {
+  color: #fff;
+  text-decoration-color: var(--accent);
 }
 
 .social-link {
@@ -1326,14 +1483,13 @@ select:disabled {
 
 .footer-grid h3 {
   font-size: 1rem;
-  margin-bottom: 12px;
+  margin: 0;
 }
 
-.footer-grid p,
-.footer-grid a {
-  display: block;
-  margin-bottom: 8px;
+.footer-grid p {
+  margin: 0;
   color: var(--muted);
+  line-height: 1.55;
 }
 
 .services-notes {
@@ -1511,8 +1667,27 @@ select:disabled {
     background: rgba(12, 12, 12, 0.98);
   }
 
+  .header-cta {
+    display: none;
+  }
+
   .site-nav.is-open {
     display: flex;
+  }
+
+  .nav-item-services {
+    display: block;
+  }
+
+  .services-subnav {
+    position: static;
+    min-width: 0;
+    margin-top: 8px;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border-radius: 12px;
   }
 
   .mobile-quickbar {

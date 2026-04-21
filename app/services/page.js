@@ -6,7 +6,7 @@ import { services } from "@/data/site";
 export const metadata = {
   title: "Services",
   description:
-    "Se services hos MH AutoTeknik og Optimering: chiptuning, motoroptimering, diagnostik, service og rådgivning med fokus på kvalitet og performance.",
+    "Se services hos MH AutoTeknik og Optimering: chiptuning, motoroptimering, fejlfinding, service og rådgivning med fokus på kvalitet og performance.",
   alternates: {
     canonical: "/services"
   }

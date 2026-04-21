@@ -16,7 +16,7 @@ export default function Footer() {
           </Link>
           <p>
             Service, fejlsøgning, værkstedsarbejde og motoroptimering med fokus på kvalitet,
-            driftssikkerhed og en troværdig dansk kundeoplevelse.
+            at bilen kører stabilt og en troværdig dansk kundeoplevelse.
           </p>
         </div>
 

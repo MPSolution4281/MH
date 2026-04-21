@@ -10,7 +10,7 @@ export const metadata = {
     template: "%s | MH AutoTeknik og Optimering"
   },
   description:
-    "MH AutoTeknik og Optimering tilbyder chiptuning, motoroptimering og værkstedsservice med fokus på performance, driftssikkerhed og en professionel dansk kundeoplevelse.",
+    "MH AutoTeknik og Optimering tilbyder chiptuning, motoroptimering og værkstedsservice med fokus på performance, at bilen kører stabilt og en professionel dansk kundeoplevelse.",
   keywords: [
     "chiptuning",
     "motoroptimering",

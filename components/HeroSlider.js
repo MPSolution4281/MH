@@ -40,7 +40,7 @@ export default function HeroSlider({ slides }) {
       <div className="container hero-content">
         <div className="hero-copy">
           <p className="eyebrow">Motoroptimering og moderne værksted</p>
-          <h1>Mere kraft. Bedre kørsel.</h1>
+          <h1>Mere kraft. Bedre kørsel</h1>
           <p className="lead">
             MH AutoTeknik og Optimering leverer chiptuning, motoroptimering og værkstedsservice med
             fokus på performance, kvalitet og en professionel dansk kundeoplevelse.

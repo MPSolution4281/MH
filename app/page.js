@@ -23,7 +23,7 @@ export default function HomePage() {
         <div className="container split-grid">
           <div className="content-stack">
             <p className="eyebrow">Kort intro</p>
-            <h2>Et værksted for kunder, der vil have et professionelt resultat.</h2>
+            <h2>Et værksted for kunder, der vil have et professionelt resultat</h2>
           </div>
           <div className="content-stack">
             <p>
@@ -48,7 +48,7 @@ export default function HomePage() {
         <div className="container">
           <div className="section-header">
             <p className="eyebrow">Find din bil</p>
-            <h2>Et hurtigt preview af mulighederne for motoroptimering.</h2>
+            <h2>Et hurtigt preview af mulighederne for motoroptimering</h2>
             <p>
               Brug søgningen som en første indikation og gå videre til den dedikerede side for flere
               detaljer om motoroptimering og mulige resultater.
@@ -67,7 +67,7 @@ export default function HomePage() {
         <div className="container">
           <div className="section-header">
             <p className="eyebrow">Services preview</p>
-            <h2>Ydelser bygget til både performance og drift.</h2>
+            <h2>Ydelser bygget til både performance og drift</h2>
           </div>
           <div className="preview-grid cards-3">
             {services.slice(0, 3).map((service) => (
@@ -89,7 +89,7 @@ export default function HomePage() {
         <div className="container">
           <div className="section-header">
             <p className="eyebrow">Seneste artikler</p>
-            <h2>Indhold, der understøtter SEO, intern linking og linkbuilding.</h2>
+            <h2>Indhold, der understøtter SEO, intern linking og linkbuilding</h2>
             <p>
               Bloggen gør det nemt at udvide sitet med mere indhold om chiptuning, motoroptimering og
               relevante emner for danske bilejere.

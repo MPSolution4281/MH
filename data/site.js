@@ -697,6 +697,154 @@ const brandYearSpan = {
   Volvo: [2008, 2024]
 };
 
+const personbilBrandEngines = {
+  "Alfa Romeo": [
+    { engineName: "1.4 TB 120", stockHp: 120, tunedHp: 155, torqueNm: 250 },
+    { engineName: "2.0 JTD 170", stockHp: 170, tunedHp: 205, torqueNm: 430 }
+  ],
+  Audi: [
+    { engineName: "1.4 TFSI 150", stockHp: 150, tunedHp: 185, torqueNm: 290 },
+    { engineName: "2.0 TDI 190", stockHp: 190, tunedHp: 228, torqueNm: 460 },
+    { engineName: "3.0 TDI 272", stockHp: 272, tunedHp: 320, torqueNm: 660 }
+  ],
+  Bentley: [
+    { engineName: "4.0 V8 550", stockHp: 550, tunedHp: 640, torqueNm: 850 }
+  ],
+  BMW: [
+    { engineName: "2.0d 190", stockHp: 190, tunedHp: 225, torqueNm: 450 },
+    { engineName: "3.0d 265", stockHp: 265, tunedHp: 315, torqueNm: 680 },
+    { engineName: "2.0i 184", stockHp: 184, tunedHp: 225, torqueNm: 360 }
+  ],
+  Chevrolet: [
+    { engineName: "1.8 141", stockHp: 141, tunedHp: 170, torqueNm: 250 },
+    { engineName: "2.0 VCDi 163", stockHp: 163, tunedHp: 195, torqueNm: 420 }
+  ],
+  Chrysler: [
+    { engineName: "3.0 CRD 218", stockHp: 218, tunedHp: 265, torqueNm: 600 }
+  ],
+  Citroen: [
+    { engineName: "1.6 HDi 120", stockHp: 120, tunedHp: 145, torqueNm: 330 },
+    { engineName: "2.0 BlueHDi 180", stockHp: 180, tunedHp: 215, torqueNm: 450 }
+  ],
+  Dacia: [
+    { engineName: "1.3 TCe 130", stockHp: 130, tunedHp: 160, torqueNm: 280 },
+    { engineName: "1.5 dCi 115", stockHp: 115, tunedHp: 140, torqueNm: 320 }
+  ],
+  Dodge: [
+    { engineName: "3.6 V6 305", stockHp: 305, tunedHp: 340, torqueNm: 500 },
+    { engineName: "5.7 HEMI 395", stockHp: 395, tunedHp: 430, torqueNm: 620 }
+  ],
+  Fiat: [
+    { engineName: "1.4 T-Jet 140", stockHp: 140, tunedHp: 170, torqueNm: 280 },
+    { engineName: "1.6 Multijet 120", stockHp: 120, tunedHp: 145, torqueNm: 330 }
+  ],
+  Ford: [
+    { engineName: "1.0 EcoBoost 125", stockHp: 125, tunedHp: 150, torqueNm: 240 },
+    { engineName: "1.5 EcoBlue 120", stockHp: 120, tunedHp: 145, torqueNm: 340 },
+    { engineName: "2.0 TDCi 180", stockHp: 180, tunedHp: 215, torqueNm: 440 }
+  ],
+  Honda: [
+    { engineName: "1.5 VTEC Turbo 182", stockHp: 182, tunedHp: 220, torqueNm: 340 },
+    { engineName: "1.6 i-DTEC 120", stockHp: 120, tunedHp: 145, torqueNm: 330 }
+  ],
+  Hyundai: [
+    { engineName: "1.0 T-GDi 120", stockHp: 120, tunedHp: 145, torqueNm: 240 },
+    { engineName: "1.6 CRDi 136", stockHp: 136, tunedHp: 165, torqueNm: 360 }
+  ],
+  Iveco: [
+    { engineName: "2.3 HPI 136", stockHp: 136, tunedHp: 170, torqueNm: 430 }
+  ],
+  Jaguar: [
+    { engineName: "2.0 D 180", stockHp: 180, tunedHp: 220, torqueNm: 460 },
+    { engineName: "2.0 P250 250", stockHp: 250, tunedHp: 300, torqueNm: 440 }
+  ],
+  Jeep: [
+    { engineName: "2.0 MultiJet 170", stockHp: 170, tunedHp: 205, torqueNm: 430 },
+    { engineName: "3.0 CRD 250", stockHp: 250, tunedHp: 300, torqueNm: 680 }
+  ],
+  Kia: [
+    { engineName: "1.6 CRDi 136", stockHp: 136, tunedHp: 170, torqueNm: 370 },
+    { engineName: "1.6 T-GDi 177", stockHp: 177, tunedHp: 215, torqueNm: 330 }
+  ],
+  "Land Rover": [
+    { engineName: "2.0 TD4 180", stockHp: 180, tunedHp: 220, torqueNm: 470 },
+    { engineName: "3.0 SDV6 306", stockHp: 306, tunedHp: 350, torqueNm: 760 }
+  ],
+  Lexus: [
+    { engineName: "200t 245", stockHp: 245, tunedHp: 290, torqueNm: 420 }
+  ],
+  MAN: [
+    { engineName: "2.0 TDI 177", stockHp: 177, tunedHp: 215, torqueNm: 460 }
+  ],
+  Mazda: [
+    { engineName: "2.2 Skyactiv-D 150", stockHp: 150, tunedHp: 185, torqueNm: 420 },
+    { engineName: "2.0 Skyactiv-G 165", stockHp: 165, tunedHp: 195, torqueNm: 290 }
+  ],
+  "Mercedes-Benz": [
+    { engineName: "C220d 194", stockHp: 194, tunedHp: 235, torqueNm: 500 },
+    { engineName: "E220d 194", stockHp: 194, tunedHp: 230, torqueNm: 500 }
+  ],
+  Mitsubishi: [
+    { engineName: "2.2 DI-D 150", stockHp: 150, tunedHp: 180, torqueNm: 400 },
+    { engineName: "1.5 T 163", stockHp: 163, tunedHp: 195, torqueNm: 320 }
+  ],
+  Nissan: [
+    { engineName: "1.5 dCi 115", stockHp: 115, tunedHp: 140, torqueNm: 320 },
+    { engineName: "1.3 DIG-T 140", stockHp: 140, tunedHp: 170, torqueNm: 290 }
+  ],
+  Opel: [
+    { engineName: "1.6 CDTi 136", stockHp: 136, tunedHp: 165, torqueNm: 360 },
+    { engineName: "2.0 CDTi 170", stockHp: 170, tunedHp: 205, torqueNm: 450 }
+  ],
+  Peugeot: [
+    { engineName: "1.5 BlueHDi 130", stockHp: 130, tunedHp: 160, torqueNm: 360 },
+    { engineName: "2.0 BlueHDi 180", stockHp: 180, tunedHp: 215, torqueNm: 450 }
+  ],
+  Porsche: [
+    { engineName: "2.0 Turbo 252", stockHp: 252, tunedHp: 300, torqueNm: 460 },
+    { engineName: "3.0 V6 340", stockHp: 340, tunedHp: 390, torqueNm: 560 }
+  ],
+  Renault: [
+    { engineName: "1.5 dCi 110", stockHp: 110, tunedHp: 135, torqueNm: 320 },
+    { engineName: "1.3 TCe 140", stockHp: 140, tunedHp: 170, torqueNm: 280 }
+  ],
+  Saab: [
+    { engineName: "1.9 TTiD 180", stockHp: 180, tunedHp: 220, torqueNm: 460 }
+  ],
+  Seat: [
+    { engineName: "1.5 TSI 150", stockHp: 150, tunedHp: 185, torqueNm: 300 },
+    { engineName: "2.0 TDI 150", stockHp: 150, tunedHp: 190, torqueNm: 400 }
+  ],
+  Skoda: [
+    { engineName: "1.5 TSI 150", stockHp: 150, tunedHp: 185, torqueNm: 300 },
+    { engineName: "2.0 TDI 150", stockHp: 150, tunedHp: 190, torqueNm: 400 }
+  ],
+  Smart: [
+    { engineName: "0.9 Turbo 90", stockHp: 90, tunedHp: 115, torqueNm: 190 }
+  ],
+  Subaru: [
+    { engineName: "2.0D 147", stockHp: 147, tunedHp: 175, torqueNm: 390 },
+    { engineName: "2.0i 150", stockHp: 150, tunedHp: 180, torqueNm: 290 }
+  ],
+  Suzuki: [
+    { engineName: "1.0 Boosterjet 111", stockHp: 111, tunedHp: 135, torqueNm: 230 },
+    { engineName: "1.4 Boosterjet 140", stockHp: 140, tunedHp: 165, torqueNm: 270 }
+  ],
+  Toyota: [
+    { engineName: "1.6 Valvematic 132", stockHp: 132, tunedHp: 160, torqueNm: 240 },
+    { engineName: "2.0 D-4D 124", stockHp: 124, tunedHp: 150, torqueNm: 360 }
+  ],
+  Volkswagen: [
+    { engineName: "1.5 TSI 150", stockHp: 150, tunedHp: 185, torqueNm: 300 },
+    { engineName: "2.0 TDI 150", stockHp: 150, tunedHp: 190, torqueNm: 400 },
+    { engineName: "2.0 TDI 200", stockHp: 200, tunedHp: 238, torqueNm: 500 }
+  ],
+  Volvo: [
+    { engineName: "D3 150", stockHp: 150, tunedHp: 185, torqueNm: 400 },
+    { engineName: "D4 190", stockHp: 190, tunedHp: 225, torqueNm: 470 }
+  ]
+};
+
 function cloneBaseEntry(baseEntry) {
   return {
     stockHp: baseEntry.stockHp,
@@ -712,6 +860,263 @@ function ensureYearRange(yearsNode, startYear, endYear, engineName, entry) {
       yearsNode[year] = { [engineName]: cloneBaseEntry(entry) };
     }
   }
+}
+
+function parseTorqueNm(torqueText) {
+  const match = String(torqueText || "").match(/\d+/);
+  return match ? Number(match[0]) : 0;
+}
+
+function buildEntry(engineSpec, fallbackEntry) {
+  const stockHp = Number(engineSpec?.stockHp) || Number(fallbackEntry?.stockHp) || 140;
+  const tunedHpRaw = Number(engineSpec?.tunedHp) || Number(fallbackEntry?.tunedHp) || Math.round(stockHp * 1.2);
+  const tunedHp = tunedHpRaw > stockHp ? tunedHpRaw : stockHp + Math.max(20, Math.round(stockHp * 0.15));
+  const torqueNm = Number(engineSpec?.torqueNm) || parseTorqueNm(fallbackEntry?.torque) || Math.round(stockHp * 2.6);
+  return {
+    stockHp,
+    tunedHp,
+    torque: `${torqueNm} Nm`,
+    description: "Vejledende modelspecifikt normal-setup. Endeligt resultat afhænger af bilens stand og konkrete variant."
+  };
+}
+
+function pickEngineSpec(modelName, specs, fallbackSpec) {
+  if (!specs || specs.length === 0) return fallbackSpec;
+  let hash = 0;
+  for (const ch of String(modelName || "")) {
+    hash += ch.charCodeAt(0);
+  }
+  return specs[hash % specs.length];
+}
+
+function pickEngineSet(modelName, specs, fallbackSpec, maxItems = 3) {
+  const source = specs && specs.length ? specs : [fallbackSpec];
+  if (source.length <= maxItems) return source;
+  let hash = 0;
+  for (const ch of String(modelName || "")) {
+    hash += ch.charCodeAt(0);
+  }
+  const start = hash % source.length;
+  const picked = [];
+  for (let i = 0; i < maxItems; i += 1) {
+    picked.push(source[(start + i) % source.length]);
+  }
+  return picked;
+}
+
+function buildYearEngines(engineSpecs, fallbackEntry) {
+  const engines = {};
+  engineSpecs.forEach((spec) => {
+    engines[spec.engineName] = buildEntry(spec, fallbackEntry);
+  });
+  return engines;
+}
+
+function getPersonbilModelSpecs(brand, modelName, brandSpecs, fallbackSpec) {
+  const model = String(modelName || "").toLowerCase();
+  if (brand === "Volkswagen") {
+    if (model.includes("passat")) return [
+      { engineName: "1.4 TSI 150", stockHp: 150, tunedHp: 180, torqueNm: 300, toYear: 2018 },
+      { engineName: "1.5 TSI 150", stockHp: 150, tunedHp: 185, torqueNm: 300, fromYear: 2019 },
+      { engineName: "2.0 TDI 150", stockHp: 150, tunedHp: 190, torqueNm: 400 },
+      { engineName: "2.0 TDI 190", stockHp: 190, tunedHp: 225, torqueNm: 460, toYear: 2019 },
+      { engineName: "2.0 TDI 200", stockHp: 200, tunedHp: 238, torqueNm: 500, fromYear: 2020 }
+    ];
+    if (model.includes("golf")) return [
+      { engineName: "1.4 TSI 122", stockHp: 122, tunedHp: 150, torqueNm: 250, toYear: 2012 },
+      { engineName: "1.4 TSI 140", stockHp: 140, tunedHp: 170, torqueNm: 280, toYear: 2018 },
+      { engineName: "1.5 TSI 150", stockHp: 150, tunedHp: 185, torqueNm: 300, fromYear: 2019 },
+      { engineName: "2.0 TDI 150", stockHp: 150, tunedHp: 190, torqueNm: 400 },
+      { engineName: "2.0 TDI 184", stockHp: 184, tunedHp: 220, torqueNm: 450, toYear: 2020 }
+    ];
+    if (model.includes("tiguan") || model.includes("t-roc") || model.includes("touran") || model.includes("arteon")) {
+      return [
+        { engineName: "1.5 TSI 150", stockHp: 150, tunedHp: 185, torqueNm: 300 },
+        { engineName: "2.0 TSI 190", stockHp: 190, tunedHp: 235, torqueNm: 390 },
+        { engineName: "2.0 TDI 150", stockHp: 150, tunedHp: 190, torqueNm: 400 },
+        { engineName: "2.0 TDI 190", stockHp: 190, tunedHp: 230, torqueNm: 470 }
+      ];
+    }
+    return brandSpecs;
+  }
+
+  if (brand === "Audi") {
+    if (model.includes("a4") || model.includes("a5") || model.includes("a6")) return [
+      { engineName: "2.0 TFSI 190", stockHp: 190, tunedHp: 235, torqueNm: 380 },
+      { engineName: "2.0 TDI 150", stockHp: 150, tunedHp: 190, torqueNm: 400 },
+      { engineName: "2.0 TDI 190", stockHp: 190, tunedHp: 228, torqueNm: 460 },
+      { engineName: "3.0 TDI 272", stockHp: 272, tunedHp: 320, torqueNm: 660 }
+    ];
+    if (model.includes("q")) return [
+      { engineName: "1.5 TFSI 150", stockHp: 150, tunedHp: 185, torqueNm: 300 },
+      { engineName: "2.0 TFSI 190", stockHp: 190, tunedHp: 235, torqueNm: 390 },
+      { engineName: "2.0 TDI 190", stockHp: 190, tunedHp: 225, torqueNm: 460 }
+    ];
+    return brandSpecs;
+  }
+
+  if (brand === "BMW") {
+    if (model.includes("1-serie") || model.includes("3-serie") || model.includes("x1")) return [
+      { engineName: "118i 136", stockHp: 136, tunedHp: 170, torqueNm: 280 },
+      { engineName: "120i 184", stockHp: 184, tunedHp: 225, torqueNm: 360 },
+      { engineName: "318d 150", stockHp: 150, tunedHp: 185, torqueNm: 390 },
+      { engineName: "320d 190", stockHp: 190, tunedHp: 225, torqueNm: 450 }
+    ];
+    if (model.includes("5-serie") || model.includes("x3") || model.includes("x5")) return [
+      { engineName: "520i 184", stockHp: 184, tunedHp: 225, torqueNm: 360 },
+      { engineName: "530i 252", stockHp: 252, tunedHp: 300, torqueNm: 450 },
+      { engineName: "520d 190", stockHp: 190, tunedHp: 225, torqueNm: 450 },
+      { engineName: "530d 265", stockHp: 265, tunedHp: 315, torqueNm: 680 }
+    ];
+    return brandSpecs;
+  }
+
+  if (brand === "Mercedes-Benz") {
+    if (model.includes("a-class") || model.includes("b-class") || model.includes("gla")) return [
+      { engineName: "A180 136", stockHp: 136, tunedHp: 170, torqueNm: 280 },
+      { engineName: "A200 163", stockHp: 163, tunedHp: 200, torqueNm: 320 },
+      { engineName: "A200d 150", stockHp: 150, tunedHp: 185, torqueNm: 390 }
+    ];
+    if (model.includes("c-class") || model.includes("e-class") || model.includes("glc") || model.includes("gle")) return [
+      { engineName: "C200 184", stockHp: 184, tunedHp: 225, torqueNm: 360 },
+      { engineName: "C220d 194", stockHp: 194, tunedHp: 235, torqueNm: 500 },
+      { engineName: "E220d 194", stockHp: 194, tunedHp: 230, torqueNm: 500 },
+      { engineName: "E300d 245", stockHp: 245, tunedHp: 290, torqueNm: 620 }
+    ];
+    return brandSpecs;
+  }
+
+  if (brand === "Skoda" || brand === "Seat") {
+    return [
+      { engineName: "1.0 TSI 110", stockHp: 110, tunedHp: 135, torqueNm: 230 },
+      { engineName: "1.5 TSI 150", stockHp: 150, tunedHp: 185, torqueNm: 300 },
+      { engineName: "2.0 TDI 150", stockHp: 150, tunedHp: 190, torqueNm: 400 }
+    ];
+  }
+
+  if (brand === "Volvo") {
+    return [
+      { engineName: "T4 190", stockHp: 190, tunedHp: 230, torqueNm: 390 },
+      { engineName: "D3 150", stockHp: 150, tunedHp: 185, torqueNm: 400 },
+      { engineName: "D4 190", stockHp: 190, tunedHp: 225, torqueNm: 470 }
+    ];
+  }
+
+  if (brand === "Ford") {
+    return [
+      { engineName: "1.0 EcoBoost 125", stockHp: 125, tunedHp: 150, torqueNm: 240 },
+      { engineName: "1.5 EcoBoost 150", stockHp: 150, tunedHp: 185, torqueNm: 300 },
+      { engineName: "1.5 EcoBlue 120", stockHp: 120, tunedHp: 145, torqueNm: 340 },
+      { engineName: "2.0 TDCi 180", stockHp: 180, tunedHp: 215, torqueNm: 440 }
+    ];
+  }
+
+  if (brand === "Peugeot" || brand === "Renault" || brand === "Opel" || brand === "Toyota" || brand === "Nissan" || brand === "Hyundai" || brand === "Kia") {
+    return [
+      { engineName: "1.2/1.3 Turbo 130", stockHp: 130, tunedHp: 160, torqueNm: 260, fromYear: 2016 },
+      { engineName: "1.5/1.6 Diesel 120", stockHp: 120, tunedHp: 145, torqueNm: 340 },
+      { engineName: "2.0 Diesel 150", stockHp: 150, tunedHp: 185, torqueNm: 400 },
+      { engineName: "1.0 Turbo 100", stockHp: 100, tunedHp: 125, torqueNm: 220, toYear: 2018 }
+    ];
+  }
+
+  if (brand === "Alfa Romeo" || brand === "Fiat" || brand === "Abarth") {
+    return [
+      { engineName: "1.4 Turbo 120", stockHp: 120, tunedHp: 150, torqueNm: 260, toYear: 2016 },
+      { engineName: "1.4 Turbo 170", stockHp: 170, tunedHp: 205, torqueNm: 330, toYear: 2020 },
+      { engineName: "1.3 Turbo 130", stockHp: 130, tunedHp: 160, torqueNm: 280, fromYear: 2018 },
+      { engineName: "2.0 Diesel 170", stockHp: 170, tunedHp: 205, torqueNm: 430 }
+    ];
+  }
+
+  if (brand === "Mazda" || brand === "Honda" || brand === "Mitsubishi" || brand === "Suzuki" || brand === "Subaru") {
+    return [
+      { engineName: "1.6/2.0 Benzin 150", stockHp: 150, tunedHp: 180, torqueNm: 290, toYear: 2018 },
+      { engineName: "2.0 Turbo Benzin 180", stockHp: 180, tunedHp: 220, torqueNm: 360, fromYear: 2016 },
+      { engineName: "2.2 Diesel 150", stockHp: 150, tunedHp: 185, torqueNm: 400 },
+      { engineName: "2.5 Benzin 194", stockHp: 194, tunedHp: 230, torqueNm: 360, fromYear: 2019 }
+    ];
+  }
+
+  if (brand === "Citroen" || brand === "Dacia" || brand === "Chevrolet") {
+    return [
+      { engineName: "1.2 Turbo 110", stockHp: 110, tunedHp: 135, torqueNm: 230 },
+      { engineName: "1.5/1.6 Diesel 120", stockHp: 120, tunedHp: 145, torqueNm: 340 },
+      { engineName: "2.0 Diesel 150", stockHp: 150, tunedHp: 185, torqueNm: 400 },
+      { engineName: "1.3 Turbo 130", stockHp: 130, tunedHp: 160, torqueNm: 280, fromYear: 2018 }
+    ];
+  }
+
+  if (brand === "Jeep" || brand === "Dodge" || brand === "Chrysler") {
+    return [
+      { engineName: "1.3/1.4 Turbo 150", stockHp: 150, tunedHp: 185, torqueNm: 300 },
+      { engineName: "2.0 Diesel 170", stockHp: 170, tunedHp: 205, torqueNm: 430 },
+      { engineName: "2.0 Turbo Benzin 270", stockHp: 270, tunedHp: 315, torqueNm: 470, fromYear: 2017 },
+      { engineName: "3.0 Diesel 250", stockHp: 250, tunedHp: 300, torqueNm: 680 }
+    ];
+  }
+
+  if (brand === "Jaguar" || brand === "Land Rover" || brand === "Lexus") {
+    return [
+      { engineName: "2.0 Diesel 180", stockHp: 180, tunedHp: 220, torqueNm: 460 },
+      { engineName: "2.0 Turbo Benzin 250", stockHp: 250, tunedHp: 300, torqueNm: 440 },
+      { engineName: "3.0 Diesel 300", stockHp: 300, tunedHp: 350, torqueNm: 760 },
+      { engineName: "3.0 Benzin 340", stockHp: 340, tunedHp: 390, torqueNm: 560 }
+    ];
+  }
+
+  if (brand === "Porsche" || brand === "Bentley") {
+    return [
+      { engineName: "2.0 Turbo 252", stockHp: 252, tunedHp: 300, torqueNm: 460, toYear: 2020 },
+      { engineName: "2.9/3.0 V6 340", stockHp: 340, tunedHp: 390, torqueNm: 560 },
+      { engineName: "4.0 V8 550", stockHp: 550, tunedHp: 640, torqueNm: 850 },
+      { engineName: "3.0 Hybrid 462", stockHp: 462, tunedHp: 520, torqueNm: 780, fromYear: 2018 }
+    ];
+  }
+
+  if (brand === "Saab" || brand === "Smart") {
+    return [
+      { engineName: "0.9 Turbo 90", stockHp: 90, tunedHp: 115, torqueNm: 190, fromYear: 2014 },
+      { engineName: "1.9 Diesel 150", stockHp: 150, tunedHp: 185, torqueNm: 390, toYear: 2012 },
+      { engineName: "2.0 Turbo 210", stockHp: 210, tunedHp: 250, torqueNm: 400, toYear: 2012 }
+    ];
+  }
+
+  if (brand === "Iveco" || brand === "MAN") {
+    return [
+      { engineName: "2.0 Diesel 150", stockHp: 150, tunedHp: 185, torqueNm: 420 },
+      { engineName: "2.3 Diesel 180", stockHp: 180, tunedHp: 220, torqueNm: 500 },
+      { engineName: "3.0 Diesel 210", stockHp: 210, tunedHp: 250, torqueNm: 580 }
+    ];
+  }
+
+  return brandSpecs && brandSpecs.length ? brandSpecs : [fallbackSpec];
+}
+
+function filterSpecsByYear(specs, year) {
+  if (!specs || specs.length === 0) return [];
+  const explicitlyBound = specs.some((spec) => spec.fromYear || spec.toYear);
+  if (explicitlyBound) {
+    const filtered = specs.filter((spec) => {
+      const fromYear = spec.fromYear || 1900;
+      const toYear = spec.toYear || 2999;
+      return year >= fromYear && year <= toYear;
+    });
+    return filtered.length ? filtered : specs;
+  }
+
+  if (specs.length <= 2) return specs;
+  if (year <= 2013) return specs.slice(0, Math.min(2, specs.length));
+  if (year <= 2018) {
+    const mid = Math.floor(specs.length / 2);
+    return specs.slice(Math.max(0, mid - 1), Math.min(specs.length, mid + 1));
+  }
+  return specs.slice(Math.max(0, specs.length - 2));
+}
+
+function pickEngineSetForYear(modelName, specs, fallbackSpec, year, maxItems = 3) {
+  const yearFiltered = filterSpecsByYear(specs, year);
+  return pickEngineSet(modelName, yearFiltered, fallbackSpec, maxItems);
 }
 
 Object.keys(vehicleData.Personbil).forEach((brand) => {
@@ -730,10 +1135,21 @@ Object.keys(vehicleData.Personbil).forEach((brand) => {
 
   const preferredModels = brandModelPresets[brand] || [baseModel, `${baseModel} Plus`, `${baseModel} Sport`];
   const [startYear, endYear] = brandYearSpan[brand] || [2010, 2024];
+  const fallbackSpec = {
+    engineName: baseEngineName,
+    stockHp: baseEntry.stockHp,
+    tunedHp: baseEntry.tunedHp,
+    torqueNm: parseTorqueNm(baseEntry.torque)
+  };
+  const brandSpecs = personbilBrandEngines[brand] || [fallbackSpec];
   preferredModels.forEach((modelName) => {
     if (!models[modelName]) {
       models[modelName] = {};
-      ensureYearRange(models[modelName], startYear, endYear, baseEngineName, baseEntry);
+      for (let year = startYear; year <= endYear; year += 1) {
+      const sourceSpecs = getPersonbilModelSpecs(brand, modelName, brandSpecs, fallbackSpec);
+      const modelSpecs = pickEngineSetForYear(modelName, sourceSpecs, fallbackSpec, year, 8);
+      models[modelName][year] = buildYearEngines(modelSpecs, baseEntry);
+      }
     }
   });
 
@@ -741,16 +1157,23 @@ Object.keys(vehicleData.Personbil).forEach((brand) => {
     const yearsNode = models[modelName];
     const existingYears = Object.keys(yearsNode);
     if (existingYears.length === 0) {
-      ensureYearRange(yearsNode, startYear, endYear, baseEngineName, baseEntry);
+      for (let year = startYear; year <= endYear; year += 1) {
+        const sourceSpecs = getPersonbilModelSpecs(brand, modelName, brandSpecs, fallbackSpec);
+        const modelSpecs = pickEngineSetForYear(modelName, sourceSpecs, fallbackSpec, year, 8);
+        yearsNode[year] = buildYearEngines(modelSpecs, baseEntry);
+      }
       return;
     }
 
-    const sampleYear = existingYears[0];
-    const sampleEngines = Object.keys(yearsNode[sampleYear]);
-    const sampleEngine = sampleEngines[0] || baseEngineName;
-    const sampleEntry = yearsNode[sampleYear][sampleEngine] || baseEntry;
-
-    ensureYearRange(yearsNode, startYear, endYear, sampleEngine, sampleEntry);
+    for (let year = startYear; year <= endYear; year += 1) {
+      const sourceSpecs = getPersonbilModelSpecs(brand, modelName, brandSpecs, fallbackSpec);
+      const modelSpecs = pickEngineSetForYear(modelName, sourceSpecs, fallbackSpec, year, 8);
+      const yearEngines = buildYearEngines(modelSpecs, baseEntry);
+      yearsNode[year] = {
+        ...(yearsNode[year] || {}),
+        ...yearEngines
+      };
+    }
   });
 });
 
@@ -960,6 +1383,56 @@ const varebilYearSpan = {
   Toyota: [2012, 2024]
 };
 
+const varebilBrandEngines = {
+  Ford: [
+    { engineName: "2.0 EcoBlue 130", stockHp: 130, tunedHp: 160, torqueNm: 390 },
+    { engineName: "2.0 EcoBlue 170", stockHp: 170, tunedHp: 205, torqueNm: 470 }
+  ],
+  Mercedes: [
+    { engineName: "114 CDI 136", stockHp: 136, tunedHp: 165, torqueNm: 390 },
+    { engineName: "119 CDI 190", stockHp: 190, tunedHp: 225, torqueNm: 510 }
+  ],
+  Volkswagen: [
+    { engineName: "2.0 TDI 110", stockHp: 110, tunedHp: 140, torqueNm: 330 },
+    { engineName: "2.0 TDI 150", stockHp: 150, tunedHp: 185, torqueNm: 410 }
+  ],
+  Renault: [
+    { engineName: "2.0 dCi 120", stockHp: 120, tunedHp: 150, torqueNm: 360 },
+    { engineName: "2.0 dCi 145", stockHp: 145, tunedHp: 175, torqueNm: 400 }
+  ],
+  Opel: [
+    { engineName: "1.5 CDTI 120", stockHp: 120, tunedHp: 145, torqueNm: 340 },
+    { engineName: "2.0 CDTI 150", stockHp: 150, tunedHp: 180, torqueNm: 420 }
+  ],
+  Peugeot: [
+    { engineName: "1.5 BlueHDi 120", stockHp: 120, tunedHp: 145, torqueNm: 340 },
+    { engineName: "2.0 BlueHDi 150", stockHp: 150, tunedHp: 180, torqueNm: 420 }
+  ],
+  Citroen: [
+    { engineName: "1.5 BlueHDi 120", stockHp: 120, tunedHp: 145, torqueNm: 340 },
+    { engineName: "2.0 BlueHDi 150", stockHp: 150, tunedHp: 180, torqueNm: 420 }
+  ],
+  Fiat: [
+    { engineName: "2.2 Multijet 140", stockHp: 140, tunedHp: 170, torqueNm: 400 }
+  ],
+  Iveco: [
+    { engineName: "2.3 HPI 136", stockHp: 136, tunedHp: 170, torqueNm: 430 },
+    { engineName: "3.0 HPT 180", stockHp: 180, tunedHp: 220, torqueNm: 520 }
+  ],
+  MAN: [
+    { engineName: "2.0 TDI 140", stockHp: 140, tunedHp: 175, torqueNm: 400 },
+    { engineName: "2.0 TDI 177", stockHp: 177, tunedHp: 215, torqueNm: 460 }
+  ],
+  Nissan: [
+    { engineName: "2.0 dCi 130", stockHp: 130, tunedHp: 160, torqueNm: 380 },
+    { engineName: "2.0 dCi 145", stockHp: 145, tunedHp: 175, torqueNm: 400 }
+  ],
+  Toyota: [
+    { engineName: "2.0 D-4D 145", stockHp: 145, tunedHp: 175, torqueNm: 400 },
+    { engineName: "2.0 D-4D 150", stockHp: 150, tunedHp: 180, torqueNm: 420 }
+  ]
+};
+
 Object.keys(vehicleData.Varebil).forEach((brand) => {
   const models = vehicleData.Varebil[brand];
   const modelNames = Object.keys(models);
@@ -976,11 +1449,21 @@ Object.keys(vehicleData.Varebil).forEach((brand) => {
 
   const preferredModels = varebilModelPresets[brand] || [baseModel, `${baseModel} Plus`, `${baseModel} XL`];
   const [startYear, endYear] = varebilYearSpan[brand] || [2010, 2024];
+  const fallbackSpec = {
+    engineName: baseEngineName,
+    stockHp: baseEntry.stockHp,
+    tunedHp: baseEntry.tunedHp,
+    torqueNm: parseTorqueNm(baseEntry.torque)
+  };
+  const brandSpecs = varebilBrandEngines[brand] || [fallbackSpec];
 
   preferredModels.forEach((modelName) => {
     if (!models[modelName]) {
       models[modelName] = {};
-      ensureYearRange(models[modelName], startYear, endYear, baseEngineName, baseEntry);
+      for (let year = startYear; year <= endYear; year += 1) {
+        const modelSpecs = pickEngineSetForYear(modelName, brandSpecs, fallbackSpec, year, 2);
+        models[modelName][year] = buildYearEngines(modelSpecs, baseEntry);
+      }
     }
   });
 
@@ -988,15 +1471,21 @@ Object.keys(vehicleData.Varebil).forEach((brand) => {
     const yearsNode = models[modelName];
     const existingYears = Object.keys(yearsNode);
     if (existingYears.length === 0) {
-      ensureYearRange(yearsNode, startYear, endYear, baseEngineName, baseEntry);
+      for (let year = startYear; year <= endYear; year += 1) {
+        const modelSpecs = pickEngineSetForYear(modelName, brandSpecs, fallbackSpec, year, 2);
+        yearsNode[year] = buildYearEngines(modelSpecs, baseEntry);
+      }
       return;
     }
 
-    const sampleYear = existingYears[0];
-    const sampleEngines = Object.keys(yearsNode[sampleYear]);
-    const sampleEngine = sampleEngines[0] || baseEngineName;
-    const sampleEntry = yearsNode[sampleYear][sampleEngine] || baseEntry;
-    ensureYearRange(yearsNode, startYear, endYear, sampleEngine, sampleEntry);
+    for (let year = startYear; year <= endYear; year += 1) {
+      const modelSpecs = pickEngineSetForYear(modelName, brandSpecs, fallbackSpec, year, 2);
+      const yearEngines = buildYearEngines(modelSpecs, baseEntry);
+      yearsNode[year] = {
+        ...(yearsNode[year] || {}),
+        ...yearEngines
+      };
+    }
   });
 });
 
@@ -1004,7 +1493,7 @@ export const services = [
   {
     title: "Motoroptimering",
     description:
-      "Softwareoptimering med fokus på et harmonisk effektforløb, bedre respons og et resultat, der fungerer i den virkelige verden.",
+      "Softwareoptimering med fokus på et jævn kraft i hverdagen, bedre respons og et resultat, der fungerer i den virkelige verden.",
     link: { label: "Læs om chiptuning", href: "/chiptuning" }
   },
   {
@@ -1021,12 +1510,12 @@ export const services = [
   {
     title: "Service og vedligehold",
     description:
-      "Værkstedsservice med fokus på driftssikkerhed, overblik og gennemsigtige anbefalinger."
+      "Værkstedsservice med fokus på at bilen kører stabilt, overblik og gennemsigtige anbefalinger."
   },
   {
     title: "Klargøring før optimering",
     description:
-      "Vi vurderer bilens tekniske udgangspunkt, så motoroptimering kun udføres på et sundt og realistisk fundament."
+      "Vi vurderer bilens tekniske udgangspunkt, så motoroptimering kun laves på et sundt og realistisk fundament."
   },
   {
     title: "Rådgivning om setup",
@@ -1087,7 +1576,7 @@ export const faqItems = [
   {
     question: "Hvad er forskellen på Stage 1 og Stage 2?",
     answer:
-      "Stage 1 er normalt softwarebaseret motoroptimering på en bil med standard eller næsten standard hardware. Stage 2 indebærer typisk, at bilen også har relevante hardwareændringer, så setup og forventninger skal vurderes mere konkret."
+      "Stage 1 er normalt softwarebaseret motoroptimering på en bil med standard eller næsten standard hardware. Stage 2 indebærer typisk, at bilen også har relevante hardwareændringer, så setup og forventninger skal ses igennem mere konkret."
   },
   {
     question: "Kan man mærke forskel i hverdagen?",

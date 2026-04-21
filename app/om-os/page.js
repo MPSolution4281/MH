@@ -25,10 +25,10 @@ export default function OmOsPage() {
             <h2>Erfaring og faglighed</h2>
             <p>
               Vi arbejder med biler for kunder, der forventer mere end en hurtig standardløsning.
-              Derfor prioriterer vi teknisk forståelse, gennemsigtighed og en professionel proces.
+              Derfor lægger vægt på vi teknisk forståelse, klart overblik og en professionel proces.
             </p>
             <p>
-              Uanset om du kommer for chiptuning, motoroptimering, diagnostik eller værkstedsservice,
+              Uanset om du kommer for chiptuning, motoroptimering, fejlfinding eller værkstedsservice,
               er målet det samme: at levere et resultat, du kan mærke og have tillid til.
             </p>
           </article>
@@ -50,7 +50,7 @@ export default function OmOsPage() {
       <section className="section">
         <div className="container accent-panel">
           <p className="eyebrow">Videre herfra</p>
-          <h2>Se vores services eller tag direkte kontakt.</h2>
+          <h2>Se vores services eller tag direkte kontakt</h2>
           <p className="lead">
             Du kan læse mere om <Link className="text-link" href="/services">vores services</Link> eller
             bruge <Link className="text-link" href="/kontakt">kontaktsiden</Link>, hvis du vil have en

@@ -5,7 +5,7 @@ export default function NotFound() {
     <section className="page-hero">
       <div className="container content-stack">
         <p className="eyebrow">404</p>
-        <h1>Siden blev ikke fundet.</h1>
+        <h1>Siden blev ikke fundet</h1>
         <p className="lead">
           Gå tilbage til forsiden, læs om chiptuning eller brug navigationen til at finde den rigtige
           underside.

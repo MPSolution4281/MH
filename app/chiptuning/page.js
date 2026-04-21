@@ -18,7 +18,7 @@ export default function ChiptuningPage() {
       <PageIntro
         eyebrow="Chiptuning"
         title="Chiptuning og motoroptimering forklaret enkelt og professionelt."
-        description="Her får du et klart overblik over, hvordan chiptuning fungerer, hvad forskellen er på Stage 1 og Stage 2, og hvorfor flere hestekræfter altid bør ses i sammenhæng med kvalitet og driftssikkerhed."
+        description="Her får du et klart overblik over, hvordan chiptuning fungerer, hvad forskellen er på Stage 1 og Stage 2, og hvorfor flere hestekræfter altid bør ses i sammenhæng med kvalitet og at bilen kører stabilt."
       />
 
       <section className="section">
